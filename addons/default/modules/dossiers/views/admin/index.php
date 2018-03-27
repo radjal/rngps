@@ -1,5 +1,5 @@
 <section class="title">
-	<h4><?php echo lang('dossiers:dossiers'); ?></h4>
+	<h4><?php echo lang('dossiers:docteurs'); ?></h4>
 </section>
 
 <section class="item">

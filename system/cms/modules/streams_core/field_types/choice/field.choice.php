@@ -180,7 +180,8 @@ class Field_choice
 	 * @return 	string
 	 */
 	private function format_choice($line)
-	{
+	{ 
+		if($line =='') return; // hack by raj because Uninitialized string offset: 0
 		if ($line{0} == '^')
 		{
 			return substr($line, 1);

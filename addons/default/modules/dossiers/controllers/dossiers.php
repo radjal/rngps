@@ -37,17 +37,17 @@ class Dossiers extends Public_Controller
         );
         
         $category = $this->input->get('c'); 
-        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_categories', true).' ON '.$this->db->protect_identifiers('dossiers_categories.id', true).' = '.$this->db->protect_identifiers('dossiers_dossiers.dossiers_cat', true);
-        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_organisations', true).' ON '.$this->db->protect_identifiers('dossiers_organisations.id', true).' = '.$this->db->protect_identifiers('dossiers_dossiers.groupe', true);
+        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_categories', true).' ON '.$this->db->protect_identifiers('dossiers_categories.id', true).' = '.$this->db->protect_identifiers('dossiers_docteurs.dossiers_cat', true);
+        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_organisations', true).' ON '.$this->db->protect_identifiers('dossiers_organisations.id', true).' = '.$this->db->protect_identifiers('dossiers_docteurs.groupe', true);
 
         $search = $this->input->get('s');
         if(!empty($search) and !empty($category))   
         { 
-            $params['where'] = "default_dossiers_categories.speciality LIKE '%$category%' AND ( default_dossiers_dossiers.town LIKE '%$search%' OR default_dossiers_dossiers.area_name LIKE '$search%')" ;
+            $params['where'] = "default_dossiers_categories.speciality LIKE '%$category%' AND ( default_dossiers_docteurs.town LIKE '%$search%' OR default_dossiers_docteurs.area_name LIKE '$search%')" ;
         } 
         else if(!empty($search)) 
         {
-            $params['where'] = "default_dossiers_dossiers.town LIKE '%$search%' OR default_dossiers_dossiers.area_name LIKE '$search%'" ;
+            $params['where'] = "default_dossiers_docteurs.town LIKE '%$search%' OR default_dossiers_docteurs.area_name LIKE '$search%'" ;
         }
         else if(!empty($category)) 
         {
@@ -80,7 +80,7 @@ class Dossiers extends Public_Controller
         } 
         
         // Build the page
-            $this->template->title(lang('dossiers:dossiers'))
+            $this->template->title(lang('dossiers:docteurs'))
 //                ->set('jsdata', $data)
                 ->set('search', $search)
 //                ->set('doc_count', $dcount)
@@ -109,10 +109,10 @@ class Dossiers extends Public_Controller
             'paginate' => 'no'
         );
          
-        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_categories', true).' ON '.$this->db->protect_identifiers('dossiers_categories.id', true).' = '.$this->db->protect_identifiers('dossiers_dossiers.dossiers_cat', true);
-        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_organisations', true).' ON '.$this->db->protect_identifiers('dossiers_organisations.id', true).' = '.$this->db->protect_identifiers('dossiers_dossiers.groupe', true);
+        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_categories', true).' ON '.$this->db->protect_identifiers('dossiers_categories.id', true).' = '.$this->db->protect_identifiers('dossiers_docteurs.dossiers_cat', true);
+        $this->row_m->sql['join'][] = 'LEFT JOIN '.$this->db->protect_identifiers('dossiers_organisations', true).' ON '.$this->db->protect_identifiers('dossiers_organisations.id', true).' = '.$this->db->protect_identifiers('dossiers_docteurs.groupe', true);
  
-        $params['where'] = "default_dossiers_dossiers.id = '$id' " ;
+        $params['where'] = "default_dossiers_docteurs.id = '$id' " ;
   
         $data = new stdClass();
         $data = $this->streams->entries->get_entries($params);
@@ -184,7 +184,7 @@ class Dossiers extends Public_Controller
         } 
         
         // Build the page
-            $this->template->title(lang('dossiers:dossiers'))
+            $this->template->title(lang('dossiers:docteurs'))
 //                ->set('jsdata', $data)
                 ->set('cal_week', $cal_week)
                 ->build($template, $dossiers);

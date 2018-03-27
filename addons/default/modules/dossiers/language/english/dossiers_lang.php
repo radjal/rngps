@@ -2,8 +2,8 @@
 //english
 $lang['dossiers:new']                        = 'New ';
 $lang['dossiers:edit']                       = 'Edit dossiers';
-$lang['dossiers:dossiers']                        = 'Dossiers';
-$lang['dossiers:dossiers']                       = 'Doctors';
+$lang['dossiers:docteurs']                        = 'Dossiers';
+$lang['dossiers:docteurs']                       = 'Doctors';
 $lang['dossiers:no_dossiers']                    = 'There are currently no dossiers';
  
 $lang['dossiers:submit_success']             = 'New dossiers submitted successfully.';

@@ -49,7 +49,7 @@ class Plugin_Doctor extends Plugin
         /**
          * HTML script tag for dossiers.js 
          * 
-         * {{ dossiers:dossierslist }} 
+         * {{ dossiers:docteurslist }} 
          * 
          * @return string
          */
@@ -131,7 +131,7 @@ class Plugin_Doctor extends Plugin
 
 
 		$data = $this->db->limit($limit)
-                                    ->get('dossiers_dossiers')
+                                    ->get('dossiers_docteurs')
                                     ->result_array();
 
                 // add numbering
@@ -159,22 +159,22 @@ class Plugin_Doctor extends Plugin
                 //@todo user role checks
 //                $user_id
 //                $dossiers_id
-                $this->db->select('dossiers_dossiers.*');
+                $this->db->select('dossiers_docteurs.*');
                 $this->db->select('dossiers_categories.*');
                 $this->db->select('dossiers_organisations.*');
                 $this->db->select('files.filename AS img_path');
             // query setting
                 if(!empty($id)) 
                 {
-                    $this->db->where("dossiers_dossiers.id ",$id); 
+                    $this->db->where("dossiers_docteurs.id ",$id); 
                 } else {
                     return false;
                 }
-                $this->db->join('dossiers_categories', 'dossiers_categories.id = dossiers_dossiers.dossiers_cat', 'left');
-                $this->db->join('dossiers_organisations', 'dossiers_dossiers.groupe = dossiers_organisations.id', 'left');
-                $this->db->join('files', 'dossiers_dossiers.image = files.id', 'left');
+                $this->db->join('dossiers_categories', 'dossiers_categories.id = dossiers_docteurs.dossiers_cat', 'left');
+                $this->db->join('dossiers_organisations', 'dossiers_docteurs.groupe = dossiers_organisations.id', 'left');
+                $this->db->join('files', 'dossiers_docteurs.image = files.id', 'left');
 		$data = $this->db->limit($limit)
-                                    ->get('dossiers_dossiers')
+                                    ->get('dossiers_docteurs')
                                     ->result_array(); 
 
                 return $data;

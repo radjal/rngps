@@ -4,7 +4,7 @@
     {{ msante:doc_cat_img cat={custom:get_value name="c"} }}
 </div>
 <div id="dossiers-list">
-	<!--<h3>{{ helper:lang line="dossiers:dossiers" }}</h3>-->
+	<!--<h3>{{ helper:lang line="dossiers:docteurs" }}</h3>-->
 	<div class="h3 text-center" >
             {{if category}}Choisir votre {{category}}{{endif}}{{if search && category}}, {{elseif search && !category}}Choisir un practicien, {{endif}}
             {{if search}}{{search}}

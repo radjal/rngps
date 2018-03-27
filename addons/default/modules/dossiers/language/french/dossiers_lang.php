@@ -2,8 +2,8 @@
 //french
 $lang['dossiers:new']                        = 'Nouveau Docteur';
 $lang['dossiers:edit']                       = 'Editer Docteur';
-$lang['dossiers:dossiers']                        = 'Docteur';
-$lang['dossiers:dossiers']                       = 'Docteurs';
+$lang['dossiers:docteurs']                        = 'Docteur';
+$lang['dossiers:docteurs']                       = 'Docteurs';
 $lang['dossiers:no_dossiers']                    = 'Il n\'y a pas de Docteur';
 
 $lang['dossiers:submit_success']             = 'Enregistré.';

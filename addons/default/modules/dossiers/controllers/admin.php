@@ -47,7 +47,7 @@ class Admin extends Admin_Controller
 
         // The title can be a string, or a language
         // string, prefixed by lang:
-        $extra['title'] = 'lang:dossiers:dossiers';
+        $extra['title'] = 'lang:dossiers:docteurs';
         
         // We can customize the buttons that appear
         // for each row. They point to our own functions
@@ -68,7 +68,7 @@ class Admin extends Admin_Controller
         // customizing headers
         $extra['columns'] = array('id', 'dossiers_cat', 'groupe', 'name', 'days', 'opens', 'closes', 'address', 'area_name', 'town',);
         
-        $this->streams->cp->entries_table('dossiers', 'dossiers', 20, null, true, $extra);
+        $this->streams->cp->entries_table('docteurs', 'dossiers', 20, null, true, $extra);
     }
 
     /**
@@ -85,7 +85,7 @@ class Admin extends Admin_Controller
         // Get our entries. We are simply specifying
         // the stream/namespace, and then setting the pagination up.
         $params = array(
-            'stream' => 'dossiers',
+            'stream' => 'docteurs',
             'namespace' => 'dossiers',
             'paginate' => 'yes',
             'limit' => 4,
@@ -119,7 +119,7 @@ class Admin extends Admin_Controller
         
         $skips = array('dom_id');
         //entry_form($stream_slug, $namespace_slug, $mode = 'new', $entry_id = null, $view_override = false, $extra = array(), $skips = array(), $tabs = false, $hidden = array(), $defaults = array())
-        $this->streams->cp->entry_form('dossiers', 'dossiers', 'new', null, true, $extra, $skips);
+        $this->streams->cp->entry_form('docteurs', 'dossiers', 'new', null, true, $extra, $skips);
     }
     
     /**

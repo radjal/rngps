@@ -13,7 +13,7 @@ class Dossiers_m extends MY_Model {
         {
             if($doc_id===false) $return;
             $res = $this->db->where('id', $doc_id)
-                            ->get('dossiers_dossiers')
+                            ->get('dossiers_docteurs')
                             ->result_array();  
             return $res[0];
         }
