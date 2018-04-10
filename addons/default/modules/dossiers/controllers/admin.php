@@ -66,7 +66,7 @@ class Admin extends Admin_Controller
         );
         
         // customizing headers
-        $extra['columns'] = array('id', 'dossiers_cat', 'groupe', 'name', 'days', 'opens', 'closes', 'address', 'area_name', 'town',);
+        $extra['columns'] = array('id', 'rngps',  'ancien_no',  'nom', 'prenom', 'email', 'ville', 'pays');
         
         $this->streams->cp->entries_table('docteurs', 'dossiers', 20, null, true, $extra);
     }
@@ -144,7 +144,7 @@ class Admin extends Admin_Controller
         );
 
         $skips = array('dom_id');
-         $this->streams->cp->entry_form('dossiers', 'dossiers', 'edit', $id, true, $extra, $skips);
+         $this->streams->cp->entry_form('docteurs', 'dossiers', 'edit', $id, true, $extra, $skips);
 //        $this->streams->cp->entry_form('dossiers', 'dossiers', 'edit', $id, true, $extra);
         
         // Build the page 

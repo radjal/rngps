@@ -1,0 +1,29 @@
+.period-am {
+    margin-bottom: 15px;
+} 
+.period-am button, .period-pm button {
+    margin-bottom: 15px;
+    width: 100%;
+}
+#doctor .img-circle {
+    max-width: 100%;
+}
+#appt-time {
+    margin-top: 8px;
+    line-height: 28px;
+}
+#appt-time a {
+    float: right;
+    font-size: small;
+    color: #468847;
+}
+#msgBox , #profile_fields-txt {
+    margin-top: 20px;
+}
+
+
+/* responsive */
+@media only screen and (min-width: 626px) { 
+}
+@media only screen and (min-width: 926px) { 
+}

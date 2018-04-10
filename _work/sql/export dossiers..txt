@@ -1,0 +1,2 @@
+id;created;updated;created_by;ordering_count;rngps;nom;prenom;nom_jeune_fille;naissance_date;naissance_lieu;numero_id;telephone;lat_long;date_demande;diplome;diplome_no;diplome_universite;diplome_annee;specialite;ancien_no;etat;cotisation;date_validation;notes;email;quartier;commune;ville;pays;image_id;image__diplome;dossiers_cat;groupe
+1;10/4/2018 17:21:13;;1;1;25416189115;Lomas;Radja;;1983-11-30;Bondoufle;6161;1651988;;2018-01-01;dipolome;3;inversité;161651691;specialité;561;etat;oui;1979-01-01;;;;;;;dummy;dummy;;

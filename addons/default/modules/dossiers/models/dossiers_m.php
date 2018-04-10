@@ -6,7 +6,27 @@ class Dossiers_m extends MY_Model {
 		parent::__construct();
 		
 		$this->_table = 'dossiers';
-	}       
+    }       
+        
+        
+        public function dossiers_par_rngps($rngps=false)
+        {
+            if($rngps===false) $return;
+            $dossier = $this->db->where('rngps', $rngps)
+                            ->get('dossiers_docteurs')
+                            ->result_array();  
+            return $dossier ; 
+        }
+        
+        
+        public function dossiers_par_onameg($onameg=false)
+        {
+            if($onameg===false) $return;
+            $dossier = $this->db->where('ancien_no', $onameg)
+                            ->get('dossiers_docteurs')
+                            ->result_array();  
+            return $dossier ; 
+        }
         
         
         public function get_dossiers($doc_id=false)

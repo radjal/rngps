@@ -65,7 +65,7 @@
 
 	<footer class="clearfix">
 		<div class="wrapper">
-			<p class="credits">Copyright &copy;<?php echo date('Y'); ?> PyroCMS LLC &nbsp; <span>Version <?php echo CMS_VERSION.' '.CMS_EDITION; ?> &nbsp; Rendered in {elapsed_time} sec. using {memory_usage}.</span></p>
+			<!--<p class="credits">Copyright &copy;<?php echo date('Y'); ?> PyroCMS LLC &nbsp; <span>Version <?php echo CMS_VERSION.' '.CMS_EDITION; ?> &nbsp; Rendered in {elapsed_time} sec. using {memory_usage}.</span></p>-->
 
 			<ul id="lang">
 				<form action="<?php echo current_url(); ?>" id="change_language" method="get">

@@ -2,7 +2,7 @@
 
 class Module_Dossiers extends Module
 {
-        public $version = '0.1.11';
+        public $version = '0.1.22';
 
     public function info()
     {
@@ -13,7 +13,7 @@ class Module_Dossiers extends Module
             ),
             'description' => array(
                 'en' => 'Dossiers list',
-                'fr' => 'Liste des Dossiers',
+                'fr' => 'Liste des Dossiers (necessite le type de champs Date)',
             ),
             'frontend' => true,
             'backend' => true,
@@ -88,8 +88,17 @@ class Module_Dossiers extends Module
                     $fields = array(
                         //dossiers
                         array(
+                            'name' => 'RNGPS',
+                            'slug' => 'rngps',
+                            'namespace' => 'dossiers',
+                            'type' => 'text',
+                            'extra' => array('max_length' => 11),
+                            'assign' => 'docteurs',
+                            'required' => true 
+                        ), 
+                        array(
                             'name' => 'Nom du practicien',
-                            'slug' => 'name',
+                            'slug' => 'nom',
                             'namespace' => 'dossiers',
                             'type' => 'text',
                             'extra' => array('max_length' => 60),
@@ -118,7 +127,7 @@ class Module_Dossiers extends Module
                             'name' => 'Date de naissance',
                             'slug' => 'naissance_date',
                             'namespace' => 'dossiers',
-                            'type' => 'text',
+                            'type' => 'date',
                             'extra' => array('max_length' => 10),
                             'assign' => 'docteurs',
                             'required' => true 
@@ -134,7 +143,7 @@ class Module_Dossiers extends Module
                         ),   
                         array(
                             'name' => 'N° de pièce d\'identité',
-                            'slug' => 'pays',
+                            'slug' => 'numero_id',
                             'namespace' => 'dossiers',
                             'type' => 'text',
                             'extra' => array('max_length' => 80),
@@ -161,7 +170,7 @@ class Module_Dossiers extends Module
                             'name' => 'Date de la demande',
                             'slug' => 'date_demande',
                             'namespace' => 'dossiers',
-                            'type' => 'text',
+                            'type' => 'date',
                             'assign' => 'docteurs',
                             'required' => true
                         ),
@@ -233,7 +242,7 @@ class Module_Dossiers extends Module
                             'name' => 'Date de validation',
                             'slug' => 'date_validation',
                             'namespace' => 'dossiers',
-                            'type' => 'text',
+                            'type' => 'date',
                             'assign' => 'docteurs',
                             'required' => true
                         ),
@@ -261,30 +270,38 @@ class Module_Dossiers extends Module
                             'assign' => 'docteurs',
                             'required' => false
                         ),
-//                        array(
-//                            'name' => 'Adresse',
-//                            'slug' => 'address',
-//                            'namespace' => 'dossiers',
-//                            'type' => 'text',
-//                            'assign' => 'docteurs',
-//                            'required' => false
-//                        ),
-//                        array(
-//                            'name' => 'Quartier',
-//                            'slug' => 'area_name',
-//                            'namespace' => 'dossiers',
-//                            'type' => 'text',
-//                            'assign' => 'docteurs',
-//                            'required' => false
-//                        ),
-//                        array(
-//                            'name' => 'Ville',
-//                            'slug' => 'town',
-//                            'namespace' => 'dossiers',
-//                            'type' => 'text',
-//                            'assign' => 'docteurs',
-//                            'required' => false
-//                        ),
+                        array(
+                            'name' => 'Quartier',
+                            'slug' => 'quartier',
+                            'namespace' => 'dossiers',
+                            'type' => 'text',
+                            'assign' => 'docteurs',
+                            'required' => false
+                        ),
+                        array(
+                            'name' => 'Commune',
+                            'slug' => 'commune',
+                            'namespace' => 'dossiers',
+                            'type' => 'text',
+                            'assign' => 'docteurs',
+                            'required' => false
+                        ),
+                        array(
+                            'name' => 'Ville',
+                            'slug' => 'ville',
+                            'namespace' => 'dossiers',
+                            'type' => 'text',
+                            'assign' => 'docteurs',
+                            'required' => false
+                        ),
+                        array(
+                            'name' => 'Pays',
+                            'slug' => 'pays',
+                            'namespace' => 'dossiers',
+                            'type' => 'text',
+                            'assign' => 'docteurs',
+                            'required' => false
+                        ), 
                         array(
                             'name' => 'Image ID',
                             'slug' => 'image_id',

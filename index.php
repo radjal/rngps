@@ -1,4 +1,19 @@
-<?php
+<?php 
+// hack for automatic env constant radja
+$_SERVER['PYRO_ENV'] = stristr($_SERVER['SERVER_NAME'], 'localhost') ? 'development' : 'production' ;
+// hack for subdomain specific themes 
+		$domain = explode('.', $_SERVER['SERVER_NAME']);
+		$subdomain = '';
+		
+		if (count($domain) > 2 ) // if more than 2 then there is a subdomain
+		{
+			if ($domain[0] == 'www')
+			$subdomain = $domain[1];                
+			else
+			$subdomain = $domain[0];              
+		}  
+$subdomain ;
+define('SUBDOMAIN', $subdomain);
 
 # If you have already installed then delete this
 if ( ! file_exists('system/cms/config/database.php'))
